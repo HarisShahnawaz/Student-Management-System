@@ -1,7 +1,4 @@
-/**
- * StudentModal.jsx
- * Reusable modal form for registering or editing university students.
- */
+
 
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';

@@ -1,7 +1,3 @@
-/**
- * Sidebar.jsx
- * Primary navigation panel with responsive off-canvas behavior on mobile.
- */
 
 import {
   LayoutDashboard,

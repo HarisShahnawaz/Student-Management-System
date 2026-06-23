@@ -1,7 +1,4 @@
-/**
- * Navbar.jsx
- * Top bar displaying the active panel title and admin status indicator.
- */
+
 
 import { Menu } from 'lucide-react';
 import { NAV_ITEMS } from './Sidebar';
