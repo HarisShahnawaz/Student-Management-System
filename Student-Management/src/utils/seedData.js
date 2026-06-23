@@ -59,17 +59,18 @@ function generateStats(index) {
   const presentBase = Math.floor(pseudoRandom(index + 1) * 14) + 28;
   const present = Math.min(presentBase, total);
 
-  // Generate marks across full range (0-100) for realistic grade distribution
-  const dataStructures = Math.floor(pseudoRandom(index + 10) * 100);
-  const calculus = Math.floor(pseudoRandom(index + 20) * 100);
-  const webDevelopment = Math.floor(pseudoRandom(index + 30) * 100);
+  // Generate marks mostly in 60-100 range with bias toward higher grades
+  // Using 60 + random(0-40) to ensure most students pass with good grades
+  const dataStructures = 60 + Math.floor(pseudoRandom(index + 10) * 40);
+  const calculus = 60 + Math.floor(pseudoRandom(index + 20) * 40);
+  const webDevelopment = 60 + Math.floor(pseudoRandom(index + 30) * 40);
 
   return {
     attendance: { present, total },
     marks: {
-      'Data Structures': dataStructures,
-      Calculus: calculus,
-      'Web Development': webDevelopment,
+      'Data Structures': Math.min(dataStructures, 100),
+      Calculus: Math.min(calculus, 100),
+      'Web Development': Math.min(webDevelopment, 100),
     },
   };
 }

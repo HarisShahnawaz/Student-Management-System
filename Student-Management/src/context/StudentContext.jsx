@@ -8,7 +8,7 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 import { seedStudents } from '../utils/seedData';
 
 const STORAGE_KEY = 'university_students_data';
-const DATA_VERSION = 'v4'; // Increment to force data refresh
+const DATA_VERSION = 'v5'; // Increment to force data refresh
 
 const StudentContext = createContext(null);
 
