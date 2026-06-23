@@ -1,6 +1,6 @@
 /**
  * seedData.js
- * University seed data — 16 Pakistani students per program (BSIT, BSCS, BSSE, BSEIT).
+ * University seed data — 16 Pakistani students per program (BSIT, BSCS, BSSE, BSIET).
  * Loaded automatically when localStorage has no persisted records.
  */
 
@@ -59,16 +59,17 @@ function generateStats(index) {
   const presentBase = Math.floor(pseudoRandom(index + 1) * 14) + 28;
   const present = Math.min(presentBase, total);
 
-  const english = Math.floor(pseudoRandom(index + 10) * 45) + 45;
-  const math = Math.floor(pseudoRandom(index + 20) * 45) + 45;
-  const science = Math.floor(pseudoRandom(index + 30) * 45) + 45;
+  // Generate marks across full range (0-100) for realistic grade distribution
+  const dataStructures = Math.floor(pseudoRandom(index + 10) * 100);
+  const calculus = Math.floor(pseudoRandom(index + 20) * 100);
+  const webDevelopment = Math.floor(pseudoRandom(index + 30) * 100);
 
   return {
     attendance: { present, total },
     marks: {
-      English: Math.min(english, 100),
-      Math: Math.min(math, 100),
-      Science: Math.min(science, 100),
+      'Data Structures': dataStructures,
+      Calculus: calculus,
+      'Web Development': webDevelopment,
     },
   };
 }

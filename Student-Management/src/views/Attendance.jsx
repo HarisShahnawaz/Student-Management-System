@@ -53,9 +53,8 @@ export default function Attendance() {
       </div>
 
       {/* Attendance roster */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[600px] text-left text-sm">
+      <div className="w-full overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50">
                 <th className="px-4 py-3 font-semibold text-slate-600">Reg. No.</th>
@@ -143,7 +142,6 @@ export default function Attendance() {
               )}
             </tbody>
           </table>
-        </div>
       </div>
     </div>
   );

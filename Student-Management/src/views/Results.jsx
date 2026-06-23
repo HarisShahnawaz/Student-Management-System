@@ -125,9 +125,8 @@ export default function Results() {
       </div>
 
       {/* Grade book table */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[800px] text-left text-sm">
+      <div className="w-full overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full min-w-[800px] text-left text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50">
                 <th className="px-4 py-3 font-semibold text-slate-600">Name</th>
@@ -162,7 +161,6 @@ export default function Results() {
               )}
             </tbody>
           </table>
-        </div>
       </div>
     </div>
   );

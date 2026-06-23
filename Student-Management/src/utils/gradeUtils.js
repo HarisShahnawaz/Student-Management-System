@@ -3,14 +3,14 @@
  * Shared grade calculation helpers used across Dashboard and Results views.
  */
 
-const SUBJECTS = ['English', 'Math', 'Science'];
+const SUBJECTS = ['Data Structures', 'Calculus', 'Web Development'];
 const MAX_MARKS_PER_SUBJECT = 100;
 
 /** Total possible marks across all subjects (300 by default). */
 export const TOTAL_POSSIBLE_MARKS = SUBJECTS.length * MAX_MARKS_PER_SUBJECT;
 
 /**
- * Sum marks across English, Math, and Science.
+ * Sum marks across Data Structures, Calculus, and Web Development.
  * @param {Object} marks - Subject-wise mark object
  * @returns {number}
  */

@@ -8,6 +8,7 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 import { seedStudents } from '../utils/seedData';
 
 const STORAGE_KEY = 'university_students_data';
+const DATA_VERSION = 'v4'; // Increment to force data refresh
 
 const StudentContext = createContext(null);
 
@@ -15,10 +16,16 @@ const StudentContext = createContext(null);
 function loadStudents() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
+    const version = localStorage.getItem('university_data_version');
+    
+    if (stored && version === DATA_VERSION) {
       const parsed = JSON.parse(stored);
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
     }
+    
+    // Version mismatch or no data - clear and use seed
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.setItem('university_data_version', DATA_VERSION);
   } catch {
     // Corrupted storage — fall through to seed data
   }
@@ -52,7 +59,7 @@ export function StudentProvider({ children }) {
         class: studentData.class,
         contact: studentData.contact,
         attendance: { present: 0, total: 0 },
-        marks: { English: 0, Math: 0, Science: 0 },
+        marks: { 'Data Structures': 0, Calculus: 0, 'Web Development': 0 },
         todayStatus: null,
       };
       return [...prev, newStudent];
